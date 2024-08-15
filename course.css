@@ -490,7 +490,7 @@ margin-top: 20px;
 }
 
 /* New Media Query for width between 381px and 385px */
-@media (min-width: 381px) and (max-width: 385px) {
+@media (min-width: 381px) and (max-width: 386px) {
     .navbar .menu li a {
         font-size: 21px; /* Slightly increase font size */
         margin: 16px 0;  /* Adjust margin */
