@@ -508,8 +508,11 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
+    .home .home-content .text-1{
+        font-size: 34px;
+    }
     .home .home-content .text-2{
-        font-size: 30px;
+        font-size: 28px;
     }
     .home .home-content .text-3{
         font-size: 45px;
