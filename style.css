@@ -279,10 +279,7 @@ section .title::after{
     color: #fff; /* Set text color */
     font-size: 1.2em; /* Adjust font size */
     width: 100%; /* Ensure text takes full width */
-    display: block; /* Ensure block-level display for proper ellipsis */
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add the ellipsis (...) */
+    
 }
 
 .services .serv-content .card p{
@@ -512,10 +509,10 @@ footer span a:hover{
         font-size: 25px;
     }
     .home .home-content .text-2{
-        font-size: 70px;
+        font-size: 30px;
     }
     .home .home-content .text-3{
-        font-size: 35px;
+        font-size: 45px;
     }
     .home .home-content a{
         font-size: 23px;
@@ -550,11 +547,14 @@ footer span a:hover{
     .max-width{
         padding: 0 23px;
     }
+    .home .home-content .text-1{
+        font-size: 32px;
+    }
     .home .home-content .text-2{
-        font-size: 60px;
+        font-size: 28px;
     }
     .home .home-content .text-3{
-        font-size: 32px;
+        font-size: 45px;
     }
     .home .home-content a{
         font-size: 20px;
@@ -565,11 +565,14 @@ footer span a:hover{
 }
 
 @media (max-width: 500px) {
+    .home .home-content .text-1{
+        font-size: 24px;
+    }
     .home .home-content .text-2{
-        font-size: 50px;
+        font-size: 20px;
     }
     .home .home-content .text-3{
-        font-size: 27px;
+        font-size: 35px;
     }
     .about .about-content .right .text,
     .skills .skills-content .left .text{
