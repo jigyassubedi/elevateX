@@ -489,6 +489,50 @@ margin-top: 20px;
     }
 }
 
+/* New Media Query for width between 381px and 385px */
+@media (min-width: 381px) and (max-width: 385px) {
+    .navbar .menu li a {
+        font-size: 21px; /* Slightly increase font size */
+        margin: 16px 0;  /* Adjust margin */
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 42px; /* Slightly increase font size */
+    }
+    
+    .home .home-content .text-3 {
+        font-size: 23px; /* Slightly increase font size */
+    }
+    
+    .home .home-content a {
+        font-size: 19px; /* Adjust button font size */
+        padding: 9px 22px; /* Adjust button padding */
+    }
+    
+    .contact .contact-content .row {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Adjust height to fit content */
+    }
+    
+    .contact .contact-content .column {
+        width: 100%; /* Full width for each column */
+    }
+
+    /* Adjust padding and font sizes in the contact section */
+    .contact {
+        padding-top: 55px;
+        padding-bottom: 18px;
+    }
+    
+    .contact .contact-content .info .sub-title {
+        font-size: 17px; /* Adjust font size */
+    }
+    
+    .about .about-content .left img {
+        width: 100%; /* Make the image responsive */
+        height: auto;
+    }
+}
 
 @media (max-width: 380px) {
     .navbar .menu li a {
