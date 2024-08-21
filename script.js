@@ -82,5 +82,51 @@ emailInput.addEventListener('input', function () {
         emailValidationMessage.textContent = 'Enter a valid email address.';
     }
 });
-});
 
+// Initialize EmailJS
+emailjs.init("hoVAH_lKbREHsUo1L");
+
+// Function to send mail
+function sendMail(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Collect form data
+    const name = document.getElementById("alphabetInput").value;
+    const email = document.getElementById("emailInput").value;
+    const number = document.getElementById("numberInput").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.querySelector("textarea").value;
+
+    // Validate form data
+    if (!name || !email || !number || !subject || !message) {
+        alert("All fields are required. Please fill out the entire form.");
+        return; // Stop execution if validation fails
+    }
+
+    // Parameters to send to EmailJS
+    const templateParams = {
+        alphabetInput: name,
+        emailInput: email,
+        numberInput: number,
+        subject: subject,
+        message: message
+    };
+
+    // Send email
+    emailjs.send("service_byu3fl7", "template_6c0mp4l", templateParams)
+        .then(function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Message sent successfully!");
+        }, function (error) {
+            console.error("FAILED...", error);
+            alert("Message failed to send. Please try again.");
+        });
+
+    // Reset the form
+    document.querySelector("form").reset();
+}
+
+// Add event listener to the send button
+document.getElementById("sendButton").addEventListener("click", sendMail);
+
+});
