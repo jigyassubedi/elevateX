@@ -455,6 +455,9 @@ footer{
     color: #fff;
     text-align: center;
 }
+footer p{
+    font-size: 14px;
+}
 footer span a{
     color: #0096FF;
     text-decoration: none;
