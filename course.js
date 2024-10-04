@@ -14,6 +14,16 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
+    // Hiding any .html files in the URL dynamically
+   const currentPath = window.location.pathname;
+    
+   if (currentPath.includes(".html")) {
+       const newPath = currentPath.replace(/\/?(index|data|web)\.html/, "/");
+       window.history.replaceState(null, null, newPath);
+   }
+    // Show the content once the URL is cleaned up
+    $('body').fadeIn(500); // Smooth fade-in for a better UX
+    
 
     // slide-up script
     $('.scroll-up-btn').click(function(){
@@ -32,4 +42,17 @@ $(document).ready(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
+    
+    // Handling links with data-href to hide URL in the status bar
+document.querySelectorAll('a[data-href]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = this.getAttribute('data-href');
+        window.location.href = target;
+    });
+
+    anchor.addEventListener('mouseover', function(event) {
+        event.preventDefault(); // Prevent showing the link in the status bar
+    });
+});
 });

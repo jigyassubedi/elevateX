@@ -43,12 +43,11 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .teams, .contact, footer{
+.about, .services, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content,
 .services .serv-content,
-.skills .skills-content,
 .contact .contact-content{
     display: flex;
     flex-wrap: wrap;
@@ -92,13 +91,13 @@ section .title::after{
     position: fixed;
     width: 100%;
     z-index: 999;
-    padding: 30px 0;
+    padding: 5px 0;
     font-family: 'Ubuntu', sans-serif;
     background: #0096FF;
     transition: all 0.3s ease;
 }
 .navbar.sticky{
-    padding: 15px 0;
+    /* padding: 15px 0; */
     background: #0096FF;
 }
 .navbar .max-width{
@@ -106,10 +105,12 @@ section .title::after{
     align-items: center;
     justify-content: space-between;
 }
-.navbar .logo a{
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
+.navbar .logo img{
+    max-height: 12vh;
+    margin-left: -18px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
 }
 .navbar .menu li{
     list-style: none;
@@ -212,11 +213,15 @@ footer span a:hover{
 .services{
    padding: 30px 0;
 }
-.services .serv-content{
-    padding-top: 20px;
-    
+.services .serv-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure cards stretch to the same height */
+    flex-wrap: wrap;
 }
-.services .serv-content .card .technical{
+
+.services .serv-content .card .technical,
+.services .serv-content .card .technical1 {
     font-size: 20px;
     font-weight: 450;
     text-align: left;
@@ -224,7 +229,6 @@ footer span a:hover{
     padding-top: 20px;
     position: relative;
 }
-
 .services .serv-content .card .technical::after {
     content: "";
     display: block;
@@ -234,14 +238,6 @@ footer span a:hover{
     margin-top: 5px; /* Add some space between the text and the line */
 }
 
-.services .serv-content .card .technical1{
-    font-size: 20px;
-    font-weight: 450;
-    text-align: left;
-    padding-left: 18px;
-    padding-top: 20px;
-    position: relative;
-}
 
 .services .serv-content .card .technical1::after {
     content: "";
@@ -251,10 +247,12 @@ footer span a:hover{
     background-color: #fff; /* Adjust the color to match your design */
     margin-top: 5px; /* Add some space between the text and the line */
 }
-.services .serv-content .card{
+.services .serv-content .card {
+    display: flex;
+    flex-direction: column; /* Makes the cards column-based */
+    justify-content: space-between;
     width: calc(50% - 20px);
     background: #0096FF;
-    text-align: center;
     border-radius: 6px;
     padding-bottom: 20px;
     cursor: pointer;
@@ -262,7 +260,9 @@ footer span a:hover{
     overflow: hidden;
 }
 
-
+.services .serv-content .card .box {
+    flex-grow: 1; /* Makes the content area take the available space */
+}
 .services .serv-content .card p{
     text-align: left;
     padding-left: 24px;
@@ -360,12 +360,34 @@ footer span a:hover{
 /* responsive media query start */
 
 @media (max-width: 1104px) {
+    .navbar .logo img{
+        max-height: 10vh;
+        /* max-height: 60px; */
+    }
     .about .about-content .left img{
         height: 400px;
         width: 350px;
     }
 }
+@media (max-width: 1024px) {
+    .navbar .logo img {
+        max-height: 10vh; /* Smaller height for tablets */
+        margin-left: -10px; /* Adjust margin for smaller screen */
+       
+    }
+    .about .title{
+        padding-top: 50px;
+    }
+}
+@media (max-width: 1024px) and (max-height: 600px) {
+    .navbar .logo img {
+        max-height: 10vh; /* Reduce logo size further for 1024x600 */
+    }
 
+    .about .title {
+        margin-top: -50px; /* Minimize gap for smaller height screens */
+    }
+}
 @media (max-width: 991px) {
     .max-width{
         padding: 0 50px;
@@ -396,6 +418,10 @@ margin-top: 20px;
     }
     .navbar .menu.active{
         left: 0;
+    }
+    .navbar .logo img{
+        max-height: 10vh;
+        margin-left: -18px;
     }
     .navbar .menu li{
         display: block;
@@ -442,6 +468,27 @@ margin-top: 20px;
         
     }
 }
+@media (max-width: 820px) {
+    .navbar .logo img {
+        max-height: 10vh; /* Smaller height for tablets */
+        margin-left: -10px; /* Adjust margin for smaller screen */
+       
+    }
+    .about .title{
+        padding-top: 30px;
+    }
+}
+@media (max-width: 768px) {
+    .navbar .logo img {
+        max-height: 9vh; /* Smaller height for tablets */
+        margin-left: -10px; /* Adjust margin for smaller screen */
+    }
+    .about .title{
+        padding-top: 10px;
+    }
+
+}
+
 
 @media (max-width: 690px) {
     .max-width{
@@ -449,6 +496,8 @@ margin-top: 20px;
     }
     .about .about-content .left img{
         margin-top: 20px;
+        width: 250px; /* Make the image responsive */
+        height: 300px;
     }
     .home .home-content .text-2{
         font-size: 60px;
@@ -465,6 +514,14 @@ margin-top: 20px;
 }
 
 @media (max-width: 500px) {
+    .navbar .logo img {
+        max-height: 7vh; /* Smaller height for mobile phones */
+        margin-left: -5px; /* Adjust margin for mobile */
+    }
+   
+    .about .title{
+        padding-top: 6px;
+    }
     .home .home-content .text-2{
         font-size: 50px;
     }
@@ -473,6 +530,9 @@ margin-top: 20px;
     }
     .about .about-content .left img{
         margin-top: 20px;
+        width: 250px; /* Make the image responsive */
+        height: 300px;
+       
     }
     .about .about-content .right .text,
     .skills .skills-content .left .text{
@@ -489,13 +549,106 @@ margin-top: 20px;
     }
 }
 
+/* New Media Query for width between 381px and 385px */
+@media (min-width: 381px) and (max-width: 386px) {
+    .navbar .menu li a {
+        font-size: 21px; /* Slightly increase font size */
+        margin: 16px 0;  /* Adjust margin */
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 42px; /* Slightly increase font size */
+    }
+    
+    .home .home-content .text-3 {
+        font-size: 23px; /* Slightly increase font size */
+    }
+    
+    .home .home-content a {
+        font-size: 19px; /* Adjust button font size */
+        padding: 9px 22px; /* Adjust button padding */
+    }
+    
+    .contact .contact-content .row {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Adjust height to fit content */
+    }
+    
+    .contact .contact-content .column {
+        width: 100%; /* Full width for each column */
+    }
+
+    /* Adjust padding and font sizes in the contact section */
+    .contact {
+        padding-top: 55px;
+        padding-bottom: 18px;
+    }
+    
+    .contact .contact-content .info .sub-title {
+        font-size: 17px; /* Adjust font size */
+    }
+    
+    .about .about-content .left img {
+        width: 250px; /* Make the image responsive */
+        height: 300px;
+    }
+}
+
+/* Media Query for exactly 385px width */
+@media (min-width: 385px) and (max-width: 385px) {
+    .navbar .menu li a {
+        font-size: 21px; /* Slightly increase font size */
+        margin: 16px 0;  /* Adjust margin */
+    }
+    
+    .home .home-content .text-2 {
+        font-size: 42px; /* Slightly increase font size */
+    }
+    
+    .home .home-content .text-3 {
+        font-size: 23px; /* Slightly increase font size */
+    }
+    
+    .home .home-content a {
+        font-size: 19px; /* Adjust button font size */
+        padding: 9px 22px; /* Adjust button padding */
+    }
+    
+    .contact .contact-content .row {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Adjust height to fit content */
+    }
+    
+    .contact .contact-content .column {
+        width: 100%; /* Full width for each column */
+    }
+
+    /* Adjust padding and font sizes in the contact section */
+    .contact {
+        padding-top: 55px;
+        padding-bottom: 18px;
+    }
+    
+    .contact .contact-content .info .sub-title {
+        font-size: 17px; /* Adjust font size */
+    }
+    
+    .about .about-content .left img {
+        width: 250px; /* Make the image responsive */
+        height: 300px;
+    }
+}
 
 @media (max-width: 380px) {
     .navbar .menu li a {
         font-size: 20px; /* Reduce font size for better spacing */
         margin: 15px 0;  /* Adjust margin */
     }
-    
+        .about .title {
+            margin-top: -30px; /* Minimize gap for smaller height screens */
+            margin-bottom: -10px;
+            font-size: 22px;
+        }
     .home .home-content .text-2 {
         font-size: 40px; /* Decrease font size */
     }
@@ -529,7 +682,7 @@ margin-top: 20px;
     }
     
     .about .about-content .left img {
-        width: 100%; /* Make the image responsive */
-        height: auto;
+        width: 250px; /* Make the image responsive */
+        height: 300px;
     }
 }

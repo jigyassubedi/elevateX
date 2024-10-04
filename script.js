@@ -14,7 +14,19 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
+    
 
+   // Hiding any .html files in the URL dynamically
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.includes(".html")) {
+        const newPath = currentPath.replace(/\/?(index|data|web)\.html/, "/");
+        window.history.replaceState(null, null, newPath);
+    }
+    
+    // Show the content once the URL is cleaned up
+    $('body').fadeIn(500); // Smooth fade-in for a better UX
+    
     // slide-up script
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
@@ -22,7 +34,23 @@ $(document).ready(function(){
         $('html').css("scrollBehavior", "auto");
     });
 
-    $('.navbar .menu li a').click(function(){
+     // Applying smooth scroll to menu items click and prevent URL hash change
+     $('.navbar .menu li a').click(function(event){
+        event.preventDefault(); // Prevent default anchor click behavior
+
+        // Get the target section id from the href attribute
+        var target = $(this).attr('href');
+
+        // Smooth scroll to the target section
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 0); // Adjust the duration as needed
+
+        // Close the menu after clicking on a menu item
+         $('.navbar .menu').removeClass("active");
+         $('.menu-btn i').removeClass("active");
+
+
         // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
@@ -84,7 +112,9 @@ emailInput.addEventListener('input', function () {
 });
 
 // Initialize EmailJS
-emailjs.init("hoVAH_lKbREHsUo1L");
+(function() {
+    emailjs.init("hoVAH_lKbREHsUo1L");
+})();
 
 // Function to send mail
 function sendMail(event) {
@@ -128,5 +158,20 @@ function sendMail(event) {
 
 // Add event listener to the send button
 document.getElementById("sendButton").addEventListener("click", sendMail);
+
+
+ // Handling links with data-href to hide URL in the status bar
+ document.querySelectorAll('a[data-href]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = this.getAttribute('data-href');
+        window.location.href = target;
+    });
+
+    anchor.addEventListener('mouseover', function(event) {
+        event.preventDefault(); // Prevent showing the link in the status bar
+    });
+});
+
 
 });

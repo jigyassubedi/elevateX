@@ -12,33 +12,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <script src="https://kit.fontawesome.com/14c762b9ac.js" crossorigin="anonymous"></script>
-
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-(function(){
-  emailjs.init({
-    publicKey: "hoVAH_lKbREHsUo1L",
-  });
-})();
-</script>
+    <script src="path/to/script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
+<link rel="shortcut icon" href="photos/favicon.png">
 </head>
+
 <body>
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Elevate<span>X</span></a></div>
+            <div class="logo"><a data-href="index.html"><img src="photos/favicon.png" alt="ElevateX Academy"></a></div>
             <ul class="menu">
-                <li><a href="#home" class="menu-btn">Home</a></li>
-                <li><a href="#about" class="menu-btn">About</a></li>
-                <li><a href="#services" class="menu-btn">Courses</a></li>
-                <!-- <li><a href="#skills" class="menu-btn">Skills</a></li>
-                <li><a href="#teams" class="menu-btn">Gallery</a></li> -->
-                <li><a href="#contact" class="menu-btn">Contact</a></li>
+                <li><a data-href="index.html#home" class="menu-btn">Home</a></li>
+                <li><a data-href="index.html#about" class="menu-btn">About</a></li>
+                <li><a data-href="index.html#courses" class="menu-btn">Courses</a></li>
+                <li><a data-href="index.html#contact" class="menu-btn">Contact</a></li>
             </ul>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -52,8 +43,8 @@
             <div class="home-content">
                 <div class="text-1">Accelerate your learning journey with</div>
                 <div class="text-3"><span class="typing"></span></div>
-                <div class="text-2">where speed meets knowledge</div>
-                <a href="#services">Find Courses <i class="fas fa-arrow-right"></i></a>
+                <div class="text-2">where speed meets knowledge and delivery</div>
+                <a data-href="#courses">Find Courses <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -64,21 +55,21 @@
             <h2 class="title">About Us</h2>
             <div class="about-content">
                 <div class="column left">
-                    <img src="photos/abt.jpg" alt="Jigyas Subedi">
+                    <img src="photos/abt.jpg" loading="lazy" alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">"Unlocking Potential Through Comprehensive Learning and Real-World Experience"</div>
-                    <p>ElevateX Academy is a cutting-edge educational institution dedicated to empowering individuals with in-demand skills in Frontend Web Development and Data Analysis. Our mission is to bridge the gap between ambition and opportunity, providing a supportive environment where students can elevate their careers and transform their futures.</p>
+                    <div class="text">"Unlocking Potential Through Comprehensive Learning and Real-World Experience, On-time Delivery"</div>
+                    <p>ElevateX Academy is a cutting-edge institution dedicated to empowering individuals with in-demand skills in Frontend Web Development, Data Analysis and IT Service provider. Our mission is to bridge the gap between ambition and opportunity, providing a supportive environment for students as well as for our clients to elevate their Journey ahead.</p>
+                    <br>
+                    <p><i class="fas fa-check"></i> IT Support </p>
+                    <br>
+                    <p><i class="fas fa-check"></i> Web Development</p>
+                    <br>
+                    <p><i class="fas fa-check"></i> Cloud COmputing</p>
                     <br>
                     <p><i class="fas fa-check"></i> Expert Trainers</p>
                     <br>
-                    <p><i class="fas fa-check"></i> Interview Rehearsal</p>
-                    <br>
-                    <p><i class="fas fa-check"></i> Resume Building</p>
-                    <br>
-                    <p><i class="fas fa-check"></i> Personal Mentor</p>
-                    <br>
-                    <p><i class="fas fa-check"></i> Certificate of Completion</p>
+                    <p><i class="fas fa-check"></i>Job placement support</p>
                     
                 </div>
             </div>
@@ -86,27 +77,27 @@
     </section>
 
     <!-- Course section start -->
-    <section class="services" id="services">
+    <section class="services" id="courses">
         <div class="max-width">
             <h2 class="title">Courses</h2>
             <div class="serv-content">
                 <div class="card">
-                    <a href="data.html" class="clickable-container">
+                    <a data-href="data.html" class="clickable-container">
                     <div class="box">
-                        <img src="photos/da.jpg" alt="">
+                        <img src="photos/da.jpg" loading="lazy" alt="">
                         <div class="text">Mastering Data Analysis   </div>
-                        <p><i class="fa-solid fa-dollar-sign"></i> 3000.00</p>
+                        <!-- <p><i class="fa-solid fa-dollar-sign"></i> 3000.00</p> -->
                         <!-- <br> -->
                         <!-- <p class="lessons"><i class="fa-solid fa-book"></i> 30 Lessons</p> -->
                     </div>
                      </a>   
                 </div>
                 <div class="card">
-                    <a href="web.html" class="clickable-container">
+                    <a data-href="web.html" class="clickable-container">
                     <div class="box">
-                        <img src="photos/frnt.jpg" alt="">
+                        <img src="photos/frnt.jpg" loading="lazy" alt="">
                         <div class="text">Front-End Web Development</div>
-                        <p><i class="fa-solid fa-dollar-sign"></i> 3000.00</p>
+                        <!-- <p><i class="fa-solid fa-dollar-sign"></i> 3000.00</p> -->
                         <!-- <br> -->
                         <!-- <p class="lessons"><i class="fa-solid fa-book"></i> 20 Lessons</p> -->
                     </div>
@@ -125,32 +116,52 @@
             <div class="contact-content">
                 <div class="column left">
                     <div class="text">Get in Touch</div>
-                    <p>We’re here to help you on your learning journey! Whether you have questions, feedback, or need support, our team is ready to assist you.
+                    <p>We’re here to support you on your learning journey! Whether you have questions, feedback, or need assistance, our dedicated team is ready to help.
                     </p>
                     <div class="icons">
                         <div class="row">
-                            <i class="fas fa-user"></i>
+                            <a data-href="index.html"><img src="photos/favicon.png" alt="ElevateX Academy"></a>
                             <div class="info">
                                 <!-- <img src="" alt="Elevate Academy"> -->
-                                 <p>ElevateX Academy</p>
+                                <div class="sub-title">ElevateX Academy</div>
                             </div>
                         </div>
                         <div class="row">
-                            <i class="fas fa-building"></i>
+                            <a data-href="https://maps.app.goo.gl/UJHVCWCXjXfcSwTM9" target="_blank"><i class="fas fa-location-dot"></i></a>
                             <div class="info">
-                                <div class="head">Head Office</div>
+                                <!-- <div class="head">Head Office</div> -->
                                 <div class="sub-title">Melbourne VIC 3000, Australia</div>
+                                
                             </div>
                         </div>
                         
                         <div class="row">
-                            <i class="fas fa-envelope"></i>
+                            <a data-href="mailto:info.elevatexacademy@gmail.com"><i class="fas fa-envelope"></i></a>
                             <div class="info">
-                                <div class="head">Email</div>
-                                <div class="sub-title">elevatex@academy.com</div>
+                                <!-- <div class="head">Email</div> -->
+                                <div class="sub-title">info.elevatexacademy@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a data-href="tel:+61 400 151 400"><i class="fas fa-phone"></i></a>
+                            <div class="info">
+                                <div class="sub-title">
+                                    <a data-href="tel:+61 400 151 400">+61 400 151 400</a> <br>
+                                    <a data-href="tel:+61 410 442 999">+61 410 442 999</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-section">
+                            <div class="social-title">Join Our Social Community</div>
+                            <div class="social-icons">
+                                <a data-href="https://www.facebook.com/profile.php?id=61566501635604" target="_blank"><i class="fa-brands fa-facebook" id="facebook"></i></a>
+                                <a data-href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram" id="instagram"></i></a>
+                                <a data-href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin-in" id="linkedin"></i></a>
+                                <a data-href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok" id="tiktok"></i></a>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
                 <div class="column right">
                     <div class="text">Message us</div>
@@ -168,6 +179,9 @@
                             <input type="number" id="numberInput"  placeholder="Contact number" maxlength="10">
                             <p id="errorText" style="color: red;"></p>
                         </div>
+                        <!-- <div class="field">
+                            <input type="text" id="address" placeholder="Address" required>
+                        </div> -->
                         <div class="field">
                             <input type="text" id="subject" placeholder="Subject" required>
                         </div>
@@ -188,7 +202,7 @@
         <p>We acknowledge the Traditional Custodians of the unceded lands and waterways on which ElevateX Academy does business. We pay our deep respect to the Ancestors and Elders of Wadawurrung Country and also acknowledge all First Nations Peoples that make contributions to our learning communities.</p>
         
         <br>
-        <span><span class="far fa-copyright"></span> 2024 <a href="index.html">ElevateX Academy.</a>
+        <span><span class="far fa-copyright"></span> 2024 <a data-href="index.html">ElevateX Academy.</a>
     </footer>
     
     <script src="script.js"></script>

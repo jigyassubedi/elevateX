@@ -104,5 +104,7 @@ var typed = new Typed(".typing-2", {
         backSpeed: 60,
         loop: true
     });
+0096ff
 
 
+We’re here to help you on your learning journey! Whether you have questions, feedback, or need support, our team is ready to assist you.
