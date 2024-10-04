@@ -589,8 +589,13 @@ margin-top: 20px;
     }
     
     .about .about-content .left img {
+<<<<<<< HEAD
         width: 250px; /* Make the image responsive */
         height: 300px;
+=======
+        width: 100%; /* Make the image responsive */
+        height: auto;
+>>>>>>> 0f173e5d99673a1e99e34856dfa841f17636be24
     }
 }
 
@@ -634,8 +639,13 @@ margin-top: 20px;
     }
     
     .about .about-content .left img {
+<<<<<<< HEAD
         width: 250px; /* Make the image responsive */
         height: 300px;
+=======
+        width: 100%; /* Make the image responsive */
+        height: auto;
+>>>>>>> 0f173e5d99673a1e99e34856dfa841f17636be24
     }
 }
 
