@@ -44,7 +44,7 @@ $(document).ready(function(){
     }
     
     // Show the content once the URL is cleaned up
-    $('body').fadeIn(500); // Smooth fade-in for a better UX
+    $('body').fadeIn(0); // Smooth fade-in for a better UX
     
     // slide-up script
     $('.scroll-up-btn').click(function(){
@@ -172,7 +172,15 @@ function sendMail(event) {
         alert("All fields are required. Please fill out the entire form.");
         return; // Stop execution if validation fails
     }
+    // Perform length validation for the number input
+    const maxLength = parseInt(numberInput.getAttribute('maxlength'));
+    const minLength = 10;
 
+    // Check if the number input has the correct length
+    if (number.length < minLength || number.length > maxLength) {
+    errorText.textContent = 'Number must be between 10 and ' + maxLength + ' digits!';
+    return; // Stop execution if validation fails
+    }
     // Parameters to send to EmailJS
     const templateParams = {
         alphabetInput: name,
