@@ -30,16 +30,21 @@ $(document).ready(function(){
     $('.navbar .menu li a').click(function(event) {
         event.preventDefault(); // Prevent default anchor click behavior
 
-        var target = $(this).attr('href'); // Use data-href instead of href
+        var target = $(this).attr('data-href'); // Use data-href instead of href
         console.log('Redirecting to: ' + target); // Debug log to see if click is being triggered
+
+         
 
         // Ensure the target exists
         if ($(target).length) {
             $('html, body').animate({
                 scrollTop: $(target).offset().top
-            }, 600); // Adjust duration for smoothness
+            }, 0); // Adjust duration for smoothness
         }
 
+        // Redirect to index.html and scroll to the section
+         window.location.href = target; // This will redirect to index.html#section
+         
         // Close the menu after clicking on a menu item
         $('.navbar .menu').removeClass("active");
         $('.menu-btn i').removeClass("active");
