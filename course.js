@@ -32,16 +32,27 @@ $(document).ready(function(){
         $('html').css("scrollBehavior", "auto");
     });
 
-    $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
-    });
+   // Smooth scroll for menu items, and prevent URL hash change
+   $('.navbar .menu li a').click(function(event) {
+    event.preventDefault(); // Prevent default anchor click behavior
 
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
+    var target = $(this).attr('href');
+
+    // Ensure the target exists
+    if ($(target).length) {
+        // Smooth scroll to the target section
+        $('html, body').animate({
+            scrollTop: $(target).offset().top
+        }, 0); // Adjust duration as needed
+    }
+
+    // Close the menu after clicking on a menu item
+    $('.navbar .menu').removeClass("active");
+    $('.menu-btn i').removeClass("active");
+
+    // Re-enable smooth scroll on menu items click
+    $('html').css("scrollBehavior", "smooth");
+});
     
     // Handling links with data-href to hide URL in the status bar
 document.querySelectorAll('a[data-href]').forEach(function(anchor) {
