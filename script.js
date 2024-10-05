@@ -43,7 +43,7 @@ $(document).ready(function() {
     }
 
     // Show content once the URL is cleaned up
-    $('body').fadeIn(0);
+    $('body').fadeIn(500);
 
     // Slide-up script
     $('.scroll-up-btn').click(function() {
