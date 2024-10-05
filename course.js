@@ -14,16 +14,16 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
-    
     // Hiding any .html files in the URL dynamically
-    const currentPath = window.location.pathname;
-    if (currentPath.includes(".html")) {
-        const newPath = currentPath.replace(/\/?(index|data|web)\.html/, "/");
-        window.history.replaceState(null, null, newPath);
-    }
+   const currentPath = window.location.pathname;
     
+   if (currentPath.includes(".html")) {
+       const newPath = currentPath.replace(/\/?(index|data|web)\.html/, "/");
+       window.history.replaceState(null, null, newPath);
+   }
     // Show the content once the URL is cleaned up
     $('body').fadeIn(500); // Smooth fade-in for a better UX
+    
 
     // slide-up script
     $('.scroll-up-btn').click(function(){
@@ -32,29 +32,27 @@ $(document).ready(function(){
         $('html').css("scrollBehavior", "auto");
     });
 
-    // Apply smooth scroll when clicking on navbar menu links
     $('.navbar .menu li a').click(function(){
+        // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
 
-    // toggle menu/navbar script for mobile view
+    // toggle menu/navbar script
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
-
+    
     // Handling links with data-href to hide URL in the status bar
-    document.querySelectorAll('a[data-href]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(event) {
-            event.preventDefault();
-            const target = this.getAttribute('data-href');
-
-            // Collapsing the menu after click (important for mobile)
-            $('.navbar .menu').removeClass('active');
-            $('.menu-btn i').removeClass('active');
-            
-            // Navigate to target page after collapsing
-            window.location.href = target;
-        });
+document.querySelectorAll('a[data-href]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(event) {
+        event.preventDefault();
+        const target = this.getAttribute('data-href');
+        window.location.href = target;
     });
+
+    anchor.addEventListener('mouseover', function(event) {
+        event.preventDefault(); // Prevent showing the link in the status bar
+    });
+});
 });
