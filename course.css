@@ -255,7 +255,6 @@ footer span a:hover{
     background: #0096FF;
     border-radius: 6px;
     padding-bottom: 20px;
-    cursor: pointer;
     transition: all 0.3s ease;
     overflow: hidden;
 }

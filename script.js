@@ -15,6 +15,24 @@ $(document).ready(function(){
         }
     });
     
+    //hiding# from url
+    document.querySelectorAll('.menu-btn').forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default link behavior (which adds # to the URL)
+    
+            const targetSection = this.getAttribute('data-href');
+            const section = document.querySelector(targetSection);
+    
+            if (section) {
+                // Scroll to the section smoothly
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+    
+            // Optionally, remove any existing hash from the URL
+            history.replaceState(null, null, ' '); // Removes the # part from the URL
+        });
+    });
+    
 
    // Hiding any .html files in the URL dynamically
     const currentPath = window.location.pathname;
@@ -82,19 +100,27 @@ alphabetInput.addEventListener('input', function () {
 const numberInput = document.getElementById('numberInput');
 const errorText = document.getElementById('errorText');
 
-
-//Only numbers maximum allowed to 10//
+// minimum and maximum length for a number input
 numberInput.addEventListener('input', function() {
-const value = this.value;
-const maxLength = parseInt(this.getAttribute('maxlength'));
+    const value = this.value;
+    const maxLength = parseInt(this.getAttribute('maxlength'));
+    const minLength = 10;
 
-if (value.length > maxLength) {
-this.value = value.slice(0, maxLength); // Truncate to the maximum length
-errorText.textContent = 'Maximum 10 digits allowed!!!';
-} else {
-errorText.textContent = '';
-}
+    // Check if the input exceeds the maximum length
+    if (value.length > maxLength) {
+        this.value = value.slice(0, maxLength); // Truncate to the maximum length
+        errorText.textContent = 'Maximum 10 digits allowed!!!';
+    }
+    // Check if the input is below the minimum length
+    else if (value.length < minLength) {
+        errorText.textContent = 'Minimum 10 digits required!!!';
+    } 
+    // Clear the error if the length is within the valid range
+    else {
+        errorText.textContent = '';
+    }
 });
+
 
 //Checks valid email//
 const emailInput = document.getElementById('emailInput');
