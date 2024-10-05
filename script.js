@@ -29,10 +29,11 @@ $(document).ready(function(){
             }
     
             // Optionally, remove any existing hash from the URL
-            history.replaceState(null, null, ' '); // Removes the # part from the URL
-        });
+        setTimeout(() => {
+            history.replaceState(null, null, ' '); // Removes the # part from the URL after scroll completes
+        }, 0); // Delay to ensure scrolling is complete
     });
-    
+});
 
    // Hiding any .html files in the URL dynamically
     const currentPath = window.location.pathname;
