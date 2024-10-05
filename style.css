@@ -136,6 +136,12 @@ section .title::after{
 
 /* menu btn styling */
 .menu-btn{
+    display: none;
+}
+.menu.active{
+    display:block
+}
+.menu-btn{
     color: #fff;
     font-size: 23px;
     cursor: pointer;
