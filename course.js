@@ -27,10 +27,10 @@ $(document).ready(function(){
     });
 
     // Menu item click and touch event handler
-    $('.navbar .menu li a').on('click touchstart', function(event) {
+    $('.navbar .menu li a').click(function(event) {
         event.preventDefault(); // Prevent default anchor click behavior
 
-        var target = $(this).attr('data-href'); // Use data-href instead of href
+        var target = $(this).attr('href'); // Use data-href instead of href
         console.log('Redirecting to: ' + target); // Debug log to see if click is being triggered
 
         // Ensure the target exists
