@@ -14,7 +14,7 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
-    
+
     //hiding# from url
     document.querySelectorAll('.menu-btn').forEach(button => {
         button.addEventListener('click', function(event) {
@@ -78,7 +78,20 @@ $(document).ready(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
+    // Close menu when clicking on a menu item
+    $('.navbar .menu li a').click(function(event){
+    event.preventDefault(); // Prevent default anchor behavior
 
+    var target = $(this).attr('href'); // Get target section
+
+    $('html, body').animate({
+        scrollTop: $(target).offset().top // Smooth scroll to section
+    }, 0);
+
+    // Close the menu
+    $('.navbar .menu').removeClass("active");
+    $('.menu-btn i').removeClass("active");
+    });
     // typing text animation script
     var typed = new Typed(".typing", {
         strings: ["ElevateX Academy"],
