@@ -145,7 +145,7 @@ $(document).ready(function() {
 
     // Initialize EmailJS
     (function() {
-        emailjs.init("hoVAH_lKbREHsUo1L");
+        emailjs.init("YQQQb2kW_E2VnhVLi");
     })();
 
     // Send email
@@ -179,7 +179,7 @@ $(document).ready(function() {
             message: message
         };
 
-        emailjs.send("service_byu3fl7", "template_6c0mp4l", templateParams)
+        emailjs.send("service_izhlikr", "template_h8604xt", templateParams)
             .then(function(response) {
                 console.log("SUCCESS!", response.status, response.text);
                 alert("Message sent successfully!");
