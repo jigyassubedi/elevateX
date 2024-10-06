@@ -485,6 +485,10 @@ margin-top: 20px;
     .about .title{
         padding-top: 10px;
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
 
 }
 
@@ -510,6 +514,10 @@ margin-top: 20px;
     .services .serv-content .card{
         width: 100%;
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
 }
 
 @media (max-width: 500px) {
@@ -546,6 +554,10 @@ margin-top: 20px;
         font-size: 23px;
         line-height: 38px;
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
 }
 
 /* New Media Query for width between 381px and 385px */
@@ -582,6 +594,10 @@ margin-top: 20px;
         padding-top: 55px;
         padding-bottom: 18px;
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
     
     .contact .contact-content .info .sub-title {
         font-size: 17px; /* Adjust font size */
@@ -627,6 +643,10 @@ margin-top: 20px;
         padding-top: 55px;
         padding-bottom: 18px;
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
     
     .contact .contact-content .info .sub-title {
         font-size: 17px; /* Adjust font size */
@@ -660,6 +680,10 @@ margin-top: 20px;
         font-size: 18px; /* Adjust button font size */
         padding: 8px 20px; /* Adjust button padding */
     }
+    .contact .contact-content .left p{
+        text-align: justify;
+    }
+    
     
     .contact .contact-content .row {
         flex-direction: column; /* Stack elements vertically */
